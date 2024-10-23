@@ -6,6 +6,8 @@ stewi<-readRDS("stewi.RDS")
 wallace<-readRDS("wallace.RDS")
 rivers<-readRDS("rivers.RDS")
 ns<-readRDS("ns.RDS")
+scotian<-readRDS("scotian.RDS")
+
 
 
 usethis::use_data(margaree, overwrite = TRUE)
@@ -13,5 +15,7 @@ usethis::use_data(stewi, overwrite = TRUE)
 usethis::use_data(wallace, overwrite = TRUE)
 usethis::use_data(ns, overwrite = TRUE)
 usethis::use_data(rivers, overwrite = TRUE)
+usethis::use_data(scotian, overwrite = TRUE)
+
 
 
