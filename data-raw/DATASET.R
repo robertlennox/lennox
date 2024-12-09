@@ -7,6 +7,7 @@ wallace<-readRDS("wallace.RDS")
 rivers<-readRDS("rivers.RDS")
 ns<-readRDS("ns.RDS")
 scotian<-readRDS("scotian.RDS")
+mil<-sf::st_read("mil.kml")
 
 
 
@@ -16,6 +17,8 @@ usethis::use_data(wallace, overwrite = TRUE)
 usethis::use_data(ns, overwrite = TRUE)
 usethis::use_data(rivers, overwrite = TRUE)
 usethis::use_data(scotian, overwrite = TRUE)
+usethis::use_data(mil, overwrite = TRUE)
+
 
 
 
