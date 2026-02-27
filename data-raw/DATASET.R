@@ -9,6 +9,7 @@ ns<-readRDS("ns.RDS")
 scotian<-readRDS("scotian.RDS")
 lab<-readRDS("labsea.RDS")
 mil<-sf::st_read("mil.kml")
+nshires<-readRDS("nshires.RDS")
 
 
 
@@ -20,6 +21,8 @@ usethis::use_data(rivers, overwrite = TRUE)
 usethis::use_data(scotian, overwrite = TRUE)
 usethis::use_data(mil, overwrite = TRUE)
 usethis::use_data(lab, overwrite = TRUE)
+usethis::use_data(nshires, overwrite = TRUE)
+
 
 
 
