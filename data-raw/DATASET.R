@@ -10,6 +10,9 @@ scotian<-readRDS("scotian.RDS")
 lab<-readRDS("labsea.RDS")
 mil<-sf::st_read("mil.kml")
 nshires<-readRDS("nshires.RDS")
+inverness <- readRDS(here::here('data-raw', 'inverness_harbour.rds'))
+cheticamp <- readRDS(here::here('data-raw', 'cheticamp_harbour.rds'))
+
 
 
 
@@ -22,6 +25,8 @@ usethis::use_data(scotian, overwrite = TRUE)
 usethis::use_data(mil, overwrite = TRUE)
 usethis::use_data(lab, overwrite = TRUE)
 usethis::use_data(nshires, overwrite = TRUE)
+usethis::use_data(inverness, overwrite = TRUE)
+usethis::use_data(cheticamp, overwrite = TRUE)
 
 
 
