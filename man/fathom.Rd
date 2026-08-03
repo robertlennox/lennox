@@ -2,10 +2,9 @@
 % Please edit documentation in R/fathom.R
 \name{fathom}
 \alias{fathom}
-\alias{fr}
 \title{function to quickly format files from Innovasea fathom offloads}
 \usage{
-fr(x)
+fathom(x)
 }
 \description{
 function to quickly format files from Innovasea fathom offloads

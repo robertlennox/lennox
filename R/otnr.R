@@ -1,7 +1,7 @@
 #'
-#' function to quickly format files from Innovasea fathom offloads
+#' function to quickly format files from OTN data extracts
 #'
-#' @name fathom
+#' @name otnr
 #' @import magrittr
 #' @import dplyr
 #' @import gsheet
@@ -9,14 +9,13 @@
 #' @import lubridate
 #' @import tidyr
 #' @import purrr
-#' @param x
-#' @export fathom
+#' @param parquet
+#' @export otnr
 #'
 
 
-fathom <- function(x) {
-
-m <- gsheet::gsheet2tbl(
+otnr<-function(parquet){
+  m <- gsheet::gsheet2tbl(
   "https://docs.google.com/spreadsheets/d/1l8XHcmFLQvQJExbapCyESCTvF-1U7OqrWFQvYsfQSB8/edit?gid=1085301212#gid=1085301212"
 ) %>%
   dplyr::select(
@@ -43,23 +42,14 @@ m <- gsheet::gsheet2tbl(
   tidyr::separate(code, c("a", "code")) %>%
   dplyr::select(-a)
 
-fr <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
-  purrr::map_dfr(~ readr::read_csv(.x, skip = 12, col_names = FALSE)) %>%
-  dplyr::select(
-    dt = 2,
-    serial = 7,
-    id = 11,
-    code = 10
-  ) %>%
-  dplyr::mutate(id = as.character(id)) %>%
-  dplyr::filter(grepl("1303", code)) %>%
-  tidyr::separate(code, c("a", "code", "b")) %>%
-  dplyr::select(-a, -b) %>%
-  dplyr::left_join(m, by = c("id", "code"))
-
-return(fathom)
-}
-
-
-
-
+otnr<-parquet %>%
+  dplyr::select(dt=dateCollectedUTC, x=decimalLongitude, y=decimalLatitude,
+                id=tagName, Data=sensorValue) %>%
+  mutate(id=case_when(grepl("R", id) ~ gsub("R64K", "A69-1303", id),
+                      T~id)) %>%
+  separate(id, c("a", "code", "id")) %>%
+  dplyr::select(-a) %>%
+  left_join(m, by=c("id", "code")) %>%
+  mutate(frac=as.numeric(dt-floor_date(dt))) %>%
+  ungroup %>%
+  dplyr::filter(date(dt)>=dmy | is.na(dmy))}
