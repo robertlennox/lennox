@@ -52,4 +52,6 @@ otnr<-parquet %>%
   left_join(m, by=c("id", "code")) %>%
   mutate(frac=as.numeric(dt-floor_date(dt))) %>%
   ungroup %>%
-  dplyr::filter(date(dt)>=dmy | is.na(dmy))}
+  dplyr::filter(date(dt)>=dmy | is.na(dmy))
+return(otnr)
+}

@@ -43,7 +43,7 @@ m <- gsheet::gsheet2tbl(
   tidyr::separate(code, c("a", "code")) %>%
   dplyr::select(-a)
 
-fr <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
+fathom <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
   purrr::map_dfr(~ readr::read_csv(.x, skip = n, col_names = FALSE)) %>%
   dplyr::select(
     dt = 2,
