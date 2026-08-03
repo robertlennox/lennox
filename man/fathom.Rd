@@ -4,7 +4,7 @@
 \alias{fathom}
 \title{function to quickly format files from Innovasea fathom offloads}
 \usage{
-fathom(x)
+fathom(x, n = 12)
 }
 \description{
 function to quickly format files from Innovasea fathom offloads
