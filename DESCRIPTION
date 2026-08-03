@@ -1,15 +1,26 @@
 Package: lennox
-Title: Functions for the Lennox Lab at Dalhousie University
+Title: Functions for the Movement and Ecophysiology Research Group at Dalhousie University
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R:
+    person(
+        "Robert", "Lennox",
+        email = "lennox@dal.ca",
+        role = c("aut", "cre")
+    )
+Description: Data files and helper functions for acoustic telemetry
+    data analysis in R.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Depends: 
-    R (>= 2.10)
+Depends:
+    R (>= 4.1.0)
+Imports:
+    dplyr,
+    gsheet,
+    lubridate,
+    magrittr,
+    purrr,
+    readr,
+    tidyr
 LazyData: true
