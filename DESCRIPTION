@@ -1,7 +1,7 @@
 Package: lennox
 Title: Functions for the Movement and Ecophysiology Research Group at Dalhousie University
 Version: 0.0.0.9000
-Authors@R:
+Authors:
     person(
         "Robert", "Lennox",
         email = "lennox@dal.ca",
@@ -9,7 +9,6 @@ Authors@R:
     )
 Description: Data files and helper functions for acoustic telemetry
     data analysis in R.
-License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
@@ -24,3 +23,4 @@ Imports:
     readr,
     tidyr
 LazyData: true
+License: MIT + file LICENSE
