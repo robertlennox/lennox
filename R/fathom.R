@@ -14,7 +14,7 @@
 #'
 
 
-fathom <- function(x) {
+fathom <- function(x, n=12) {
 
 m <- gsheet::gsheet2tbl(
   "https://docs.google.com/spreadsheets/d/1l8XHcmFLQvQJExbapCyESCTvF-1U7OqrWFQvYsfQSB8/edit?gid=1085301212#gid=1085301212"
@@ -44,7 +44,7 @@ m <- gsheet::gsheet2tbl(
   dplyr::select(-a)
 
 fr <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
-  purrr::map_dfr(~ readr::read_csv(.x, skip = 12, col_names = FALSE)) %>%
+  purrr::map_dfr(~ readr::read_csv(.x, skip = n, col_names = FALSE)) %>%
   dplyr::select(
     dt = 2,
     serial = 7,
