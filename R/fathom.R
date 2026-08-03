@@ -52,7 +52,6 @@ fathom <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
     code = 10
   ) %>%
   dplyr::mutate(id = as.character(id)) %>%
-  dplyr::filter(grepl("1303", code)) %>%
   tidyr::separate(code, c("a", "code", "b")) %>%
   dplyr::select(-a, -b) %>%
   dplyr::left_join(m, by = c("id", "code"))
