@@ -6,6 +6,9 @@
 \usage{
 fathom(x, n = 12)
 }
+\arguments{
+\item{x}{is the fathom offload file}
+}
 \description{
 function to quickly format files from Innovasea fathom offloads
 }
