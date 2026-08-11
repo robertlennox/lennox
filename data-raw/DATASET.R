@@ -12,10 +12,11 @@ mil<-sf::st_read("mil.kml")
 nshires<-readRDS("nshires.RDS")
 inverness <- readRDS(here::here('data-raw', 'inverness_harbour.rds'))
 cheticamp <- readRDS(here::here('data-raw', 'cheticamp_harbour.rds'))
+eastern_canada <- readRDS(here::here('data-raw', 'eastern_canada.rds'))
 
 
 
-
+usethis::use_data(cb_rivers, overwrite = TRUE)
 usethis::use_data(margaree, overwrite = TRUE)
 usethis::use_data(stewi, overwrite = TRUE)
 usethis::use_data(wallace, overwrite = TRUE)
@@ -27,6 +28,7 @@ usethis::use_data(lab, overwrite = TRUE)
 usethis::use_data(nshires, overwrite = TRUE)
 usethis::use_data(inverness, overwrite = TRUE)
 usethis::use_data(cheticamp, overwrite = TRUE)
+usethis::use_data(eastern_canada, overwrite = TRUE)
 
 
 

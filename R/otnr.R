@@ -9,7 +9,7 @@
 #' @import lubridate
 #' @import tidyr
 #' @import purrr
-#' @param parquet
+#' @param parquet is the parquet file 
 #' @export otnr
 #'
 

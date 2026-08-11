@@ -9,7 +9,7 @@
 #' @import lubridate
 #' @import tidyr
 #' @import purrr
-#' @param x
+#' @param x is the fathom offload file 
 #' @export fathom
 #'
 
