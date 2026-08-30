@@ -43,18 +43,44 @@ m <- gsheet::gsheet2tbl(
   tidyr::separate(code, c("a", "code")) %>%
   dplyr::select(-a)
 
-fathom <- list.files(pattern = "\\.csv$", full.names = TRUE) %>%
-  purrr::map_dfr(~ readr::read_csv(.x, skip = n, col_names = FALSE)) %>%
-  dplyr::select(
-    dt = 2,
-    serial = 7,
-    id = 11,
-    code = 10
-  ) %>%
-  dplyr::mutate(id = as.character(id)) %>%
-  tidyr::separate(code, c("a", "code", "b")) %>%
-  dplyr::select(-a, -b) %>%
-  dplyr::left_join(m, by = c("id", "code"))
+files <- list.files(pattern = "\\.csv$", full.names = TRUE)
+
+fathom <- data.table::rbindlist(
+  lapply(files, function(f) {
+    tryCatch(
+      data.table::fread(
+        f,
+        skip = n,
+        header = FALSE,
+        colClasses = "character",
+        showProgress = FALSE,
+        select = c(2, 7, 10, 11, 13)
+      ),
+      error = function(e) NULL
+    )
+  }),
+  use.names = FALSE
+)
+
+data.table::setnames(
+  fathom,
+  c("dt", "serial", "code", "id", "Data")
+)
+
+fathom[, `:=`(
+  dt = as.POSIXct(dt, tz = "UTC"),
+  Data = as.numeric(Data)
+)]
+
+fathom[, c("a", "code", "b") := tstrsplit(code, split = "_")]
+fathom[, c("a", "b") := NULL]
+
+fathom <- merge(
+  fathom,
+  m,
+  by = c("id", "code"),
+  all.x = TRUE
+)
 
 return(fathom)
 }
