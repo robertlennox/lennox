@@ -2,6 +2,7 @@
 
 export(fathom)
 export(otnr)
+import(data.table)
 import(dplyr)
 import(gsheet)
 import(lubridate)
