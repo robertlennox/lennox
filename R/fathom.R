@@ -10,8 +10,9 @@
 #' @import lubridate
 #' @import tidyr
 #' @import purrr
-#' @param x
-#' @export fathom
+#' @param x Path containing Fathom csv files.
+#' @param n Number of header rows to skip when reading files.
+#' @export
 #'
 
 
