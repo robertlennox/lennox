@@ -84,7 +84,7 @@ fathom <- function (x, n = 12)
           header = FALSE,
           colClasses = "character",
           showProgress = FALSE,
-          select = c(2, 7, 10, 11, 13)
+          select = c(2, 7, 10, 11, 12)
         ),
         error = function(e) NULL
       )
