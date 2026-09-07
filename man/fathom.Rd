@@ -6,6 +6,11 @@
 \usage{
 fathom(x, n = 12)
 }
+\arguments{
+\item{x}{Path containing Fathom csv files.}
+
+\item{n}{Number of header rows to skip when reading files.}
+}
 \description{
 function to quickly format files from Innovasea fathom offloads
 }
