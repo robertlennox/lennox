@@ -4,7 +4,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "margaree"
 
 #' Stewiacke watershed
@@ -13,7 +12,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "stewi"
 
 #' Wallace watershed
@@ -22,7 +20,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "wallace"
 
 #' Nova Scotia rivers
@@ -31,7 +28,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "rivers"
 
 #' Nova Scotia boundary
@@ -40,7 +36,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "ns"
 
 #' Scotian Shelf
@@ -49,7 +44,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "scotian"
 
 #' Labrador Sea
@@ -58,7 +52,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "lab"
 
 #' Marine Institute locations
@@ -67,7 +60,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "mil"
 
 #' Nova Scotia watersheds
@@ -76,7 +68,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "nshires"
 
 #' Inverness Harbour
@@ -85,23 +76,6 @@
 #'
 #' @format An sf object.
 #' @keywords datasets
-#' @export
 "inverness"
 
-#' Cheticamp Harbour
-#'
-#' Cheticamp Harbour spatial data.
-#'
-#' @format An sf object.
-#' @keywords datasets
-#' @export
-"cheticamp"
-
-#' Cape Breton rivers
-#'
-#' Cape Breton river spatial data.
-#'
-#' @format An sf object.
-#' @keywords datasets
-#' @export
-"cb_rivers"
+#' Cheticamp
