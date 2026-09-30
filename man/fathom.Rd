@@ -4,10 +4,12 @@
 \alias{fathom}
 \title{function to quickly format files from Innovasea fathom offloads}
 \usage{
-fathom(x, n = 12)
+fathom(x, m, n = 12)
 }
 \arguments{
 \item{x}{Path containing Fathom csv files.}
+
+\item{m}{Google sheet metadata}
 
 \item{n}{Number of header rows to skip when reading files.}
 }

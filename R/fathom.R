@@ -11,16 +11,18 @@
 #' @import tidyr
 #' @import purrr
 #' @param x Path containing Fathom csv files.
+#' @param m Google sheet metadata
+
 #' @param n Number of header rows to skip when reading files.
 #' @export
 #'
 
 
-fathom <- function (x, n = 12)
+fathom <- function (x, m, n = 12)
 {
   require(data.table)
-  m <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1l8XHcmFLQvQJExbapCyESCTvF-1U7OqrWFQvYsfQSB8/edit?gid=1085301212#gid=1085301212") %>%
-    dplyr::select(Responsible, oid=ANIMAL_ID, id = TAG_ID_CODE, code = TAG_CODE_SPACE,
+m<-m %>%
+  dplyr::select(Responsible, oid=ANIMAL_ID, id = TAG_ID_CODE, code = TAG_CODE_SPACE,
                   spp = COMMON_NAME_E, dmy = UTC_RELEASE_DATE_TIME,
                   tag=TAG_MODEL,
                   death = HARVEST_DATE, start = TAG_ACTIVATION_DATE,
