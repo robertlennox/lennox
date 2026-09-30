@@ -18,7 +18,7 @@
 #'
 
 
-fathom <- function (x, m, n = 12)
+fathom <- function (x, m=m, n = 12)
 {
   require(data.table)
 m<-m %>%
